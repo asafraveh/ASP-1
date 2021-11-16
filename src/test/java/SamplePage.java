@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 public class SamplePage {
     private WebDriver driver;
 
-    public SamplePage(){
+    public SamplePage() {
         this.driver = DriverSingleton.getDriverInstance();
     }
 
-    public void pressElement(){
+    public void pressElement() {
         driver.findElement(By.className("seperator-link")).click();
     }
 }
