@@ -1,4 +1,5 @@
 
+import Base.BasePage2;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -16,16 +17,20 @@ import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.withTagName;
 
-public class select extends BasePage {
+public class select1 extends BasePage2 {
     public static WebDriver driver;
+
+    public select1() {
+
+    }
 
     @BeforeClass
     public static void runOnceBeforeClass() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\sioas\\IdeaProjects\\ASP-1\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://buyme.co.il/");
-    }
 
+    }
     @Test
     public void test01_waitForDisturbingElementToDisappear() {
         By disturbingElement = By.className("ember1012");
@@ -86,8 +91,7 @@ public class select extends BasePage {
         new Actions(driver).moveToElement(areaToClick).click().perform();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-
-    @Test
+     @Test
     public void test10pickBusinessAndMount() {
         WebElement title = driver.findElement(By.xpath("//*[@id=\"ember1632\"]"));
         new Actions(driver).moveToElement(title).click().perform();
@@ -119,25 +123,28 @@ public class select extends BasePage {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
     }
-
+    //
     @Test
     public void test14someone() {
         WebElement el = driver.findElement(By.id("friendName"));
         el.sendKeys("helo1");
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        el.sendKeys(Keys.TAB);
-        el.sendKeys("hii");
-    }
-    @Test
-    public void test15someone() {
-            WebElement el = driver.findElement(By.className("bm-caption-2"));
-      new Actions(driver).moveToElement(el).click().perform();
+        //     el.sendKeys(Keys.TAB);
+
 
     }
+    @Test public void test15someone() {
+
+
+    driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/div/div/div[1]/form/div[2]/div[4]/label")).click();
+    driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/div/div/div[1]/form/div[2]/div[4]/label")).sendKeys("תודה");
+
+
+
 //    String actualUrl="https://www.linkedin.com/feed/";
 //    String expectedUrl= driver.getCurrentUrl();
 //
 //        Assert.assertEquals(expectedUrl,actualUrl);
 
     }
-
+    }

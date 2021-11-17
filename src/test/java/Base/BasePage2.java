@@ -1,9 +1,13 @@
+package Base;
+
+import Base.DriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BasePage {
+public class BasePage2 {
+
     private static WebDriver driver;
 
 
@@ -23,9 +27,8 @@ public class BasePage {
     public void clickElement(By locator) {
         getWebElement(locator).click();
     }
+    public void sendkeysToElement(By locator ,String text){ getWebElement(locator).sendKeys(text);
 
-    public void sendKeysToElement(By locator, String text) {
-        getWebElement(locator).sendKeys(text);
     }
 
     public void sendKeysToElementWithKeys(By locator, Keys key, String text) {
@@ -39,4 +42,3 @@ public class BasePage {
 
 
 }
-
